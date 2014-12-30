@@ -28,6 +28,13 @@ def get_question():
                            question=question,
                            answer=answer)
 
+@app.route("/add-rule", methods=["GET"])
+def add_rule():
+    rules = model.session.query(model.Rule).all()
+    print rules
+    return render_template("rule-list.html",
+                           rules=rules)
+
 
 if __name__ == "__main__":
     model.db.init_app(app)
