@@ -31,9 +31,17 @@ def get_question():
 @app.route("/add-rule", methods=["GET"])
 def add_rule():
     rules = model.session.query(model.Rule).all()
-    print rules
+    
     return render_template("rule-list.html",
                            rules=rules)
+
+
+@app.route("/add-question", methods=["GET"])
+def add_question():
+    questions = model.session.query(model.Question).all()
+
+    return render_template("question-list.html",
+                           questions=questions)
 
 
 if __name__ == "__main__":

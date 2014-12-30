@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>BarCommons - Questions List</title>
+    </head>
+    <body>
+        <table border="1" style="width: 100%">
+            <tr>
+                <th>ID</th>
+                <th>Rule</th>
+                <th>Question</th>
+                <th>Answer</th>
+                <th>Ranking</th>
+                <th>Question Type</th>
+            </tr>
+            {% for question in questions %}
+                <tr>
+                    <td>{{ question.id }}</td>
+                    <td>{{ question.rule.title }}</td>
+                    <td>{{ question.question }}</td>
+                    <td>{{ question.answer }}</td>
+                    <td>{{ question.ranking }}</td>
+                    <td>{{ question.question_type }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
