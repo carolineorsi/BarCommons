@@ -24,11 +24,22 @@
             {% endfor %}
             <form method="POST" action="/add-question">
                 <tr>
-                    <td></td>
-                    <td><input type="text" name="rule"></input></td>
+                    <td><input type="text" name="id"></input></td>
+                    <td>
+                        <select name="rule">
+                            <option value="1">Trust Revocability</option>
+                            <option value="2">Trivia</option>
+                        </select>
+                    </td>
                     <td><input type="text" name="question"></input></td>
                     <td><input type="text" name="answer"></input></td>
-                    <td><input type="text" name="ranking"></input></td>
+                    <td>
+                        <select name="ranking">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </td>
                     <td><input type="text" name="question_type"></input>
                         <button type="submit">Add</button>
                     </td>

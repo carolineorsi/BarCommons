@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, render_template, redirect
+from flask import Flask, request, render_template, redirect, url_for
 import model
 import random
 
@@ -45,19 +45,20 @@ def list_questions():
 
 @app.route("/add-question", methods=["POST"])
 def add_question():
-    # new_question = model.Question()
-    # new_question.rule = request.form.get("to") # Need to figure this out
-    # new_question.question = request.form.get("question")
-    # new_question.answer = request.form.get("answer")
-    # new_question.ranking = int(request.form.get("ranking"))
-    # new_question.question_type = request.form.get("question-type")
+    new_question = model.Question()
+    new_question.id = int(request.form.get("id"))
+    new_question.rule_id = int(request.form.get("rule"))
+    new_question.question = request.form.get("question")
+    new_question.answer = request.form.get("answer")
+    new_question.ranking = int(request.form.get("ranking"))
+    new_question.question_type = request.form.get("question_type")
+    model.session.add(new_question)
+    model.session.commit()
 
 
-    print request.form
-    questions = model.session.query(model.Question).all()
+    print new_question.rule
 
-    return render_template("question-list.html",
-                           questions=questions)
+    return redirect(url_for('list_questions'))
 
 
 if __name__ == "__main__":
