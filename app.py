@@ -29,7 +29,7 @@ def get_question():
                            answer=answer)
 
 @app.route("/add-rule", methods=["GET"])
-def add_rule():
+def list_rules():
     rules = model.session.query(model.Rule).all()
     
     return render_template("rule-list.html",
@@ -37,7 +37,23 @@ def add_rule():
 
 
 @app.route("/add-question", methods=["GET"])
+def list_questions():
+    questions = model.session.query(model.Question).all()
+
+    return render_template("question-list.html",
+                           questions=questions)
+
+@app.route("/add-question", methods=["POST"])
 def add_question():
+    # new_question = model.Question()
+    # new_question.rule = request.form.get("to") # Need to figure this out
+    # new_question.question = request.form.get("question")
+    # new_question.answer = request.form.get("answer")
+    # new_question.ranking = int(request.form.get("ranking"))
+    # new_question.question_type = request.form.get("question-type")
+
+
+    print request.form
     questions = model.session.query(model.Question).all()
 
     return render_template("question-list.html",

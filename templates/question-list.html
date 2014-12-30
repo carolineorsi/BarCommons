@@ -22,6 +22,18 @@
                     <td>{{ question.question_type }}</td>
                 </tr>
             {% endfor %}
+            <form method="POST" action="/add-question">
+                <tr>
+                    <td></td>
+                    <td><input type="text" name="rule"></input></td>
+                    <td><input type="text" name="question"></input></td>
+                    <td><input type="text" name="answer"></input></td>
+                    <td><input type="text" name="ranking"></input></td>
+                    <td><input type="text" name="question_type"></input>
+                        <button type="submit">Add</button>
+                    </td>
+                </tr>
+            </form>
         </table>
     </body>
 </html>
