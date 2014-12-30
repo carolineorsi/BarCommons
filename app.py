@@ -60,7 +60,6 @@ def list_questions():
 @app.route("/add-question", methods=["POST"])
 def add_question():
     new_question = model.Question()
-    new_question.id = int(request.form.get("id"))
     new_question.rule_id = int(request.form.get("rule"))
     new_question.question = request.form.get("question")
     new_question.answer = request.form.get("answer")
