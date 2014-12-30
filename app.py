@@ -38,7 +38,6 @@ def list_rules():
 @app.route("/add-rule", methods=["POST"])
 def add_rule():
     new_rule = model.Rule()
-    new_rule.id = int(request.form.get("id"))
     new_rule.title = request.form.get("title")
     new_rule.description = request.form.get("description")
     new_rule.source = request.form.get("source")
@@ -47,8 +46,6 @@ def add_rule():
     model.session.add(new_rule)
     model.session.commit()
 
-
-    print new_rule
 
     return redirect(url_for('list_rules'))
 
@@ -81,6 +78,6 @@ def add_question():
 if __name__ == "__main__":
     model.db.init_app(app)
 
-    PORT = int(os.environ.get("PORT", 5001))
+    PORT = int(os.environ.get("PORT", 5000))
     DEBUG = "NO_DEBUG" not in os.environ
     app.run(debug=DEBUG, host="0.0.0.0", port=PORT)
