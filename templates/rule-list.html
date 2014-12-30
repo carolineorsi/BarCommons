@@ -22,6 +22,26 @@
                     <td>{{ rule.knowledge_level }}</td>
                 </tr>
             {% endfor %}
+            <form method="POST" action="/add-rule">
+                <tr>
+                    <td><input type="text" name="id"></input></td>
+                    <td><input type="text" name="title"</input></td>
+                    <td><input type="text" name="description"></input></td>
+                    <td><input type="text" name="source"></input></td>
+                    <td>
+                        <select name="subject">
+                            <option value="1">Trusts</option>
+                            <option value="2">Basics</option>
+                            <option value="3">Revocability</option>
+                            <option value="4">Presumption</option>
+                            <option value="5">General</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="knowledge_level"></input>
+                        <button type="submit">Add</button>
+                    </td>
+                </tr>
+            </form>
         </table>
     </body>
 </html>

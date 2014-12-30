@@ -35,6 +35,23 @@ def list_rules():
     return render_template("rule-list.html",
                            rules=rules)
 
+@app.route("/add-rule", methods=["POST"])
+def add_rule():
+    new_rule = model.Rule()
+    new_rule.id = int(request.form.get("id"))
+    new_rule.title = request.form.get("title")
+    new_rule.description = request.form.get("description")
+    new_rule.source = request.form.get("source")
+    new_rule.subject_id = int(request.form.get("subject"))
+    new_rule.knowledge_level = request.form.get("knowledge_level")
+    model.session.add(new_rule)
+    model.session.commit()
+
+
+    print new_rule
+
+    return redirect(url_for('list_rules'))
+
 
 @app.route("/add-question", methods=["GET"])
 def list_questions():
