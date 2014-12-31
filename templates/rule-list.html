@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
     </head>
     <body>
-        <table border="1" style="width: 100%" class="table">
+        <table border="1" style="width: 100%" class="table table-striped table-condensed">
             <tr>
                 <th>ID</th>
                 <th>Title</th>
@@ -24,7 +24,7 @@
                 </tr>
             {% endfor %}
             <tr>
-                <td colspan="6" style="color: #EE0000">
+                <td colspan="6">
                     <br>
                     Add a new rule:
                 </td>
@@ -32,9 +32,9 @@
             <form method="POST" action="/add-rule">
                 <tr>
                     <td>--</td>
-                    <td><input type="text" name="title"</input></td>
-                    <td><input type="text" name="description" style="width: 100%"></input></td>
-                    <td><input type="text" name="source"></input></td>
+                    <td><input type="text" name="title" placeholder="Title"></input></td>
+                    <td><input type="text" name="description" style="width: 100%" placeholder="Description"></input></td>
+                    <td><input type="text" name="source" placeholder="Source"></input></td>
                     <td>
                         <select name="subject">
                             <option value="1">Trusts</option>
@@ -44,7 +44,7 @@
                             <option value="5">General</option>
                         </select>
                     </td>
-                    <td><input type="text" name="knowledge_level"></input>
+                    <td><input type="text" name="knowledge_level" placeholder="Knowledge Level"></input>
                         <button type="submit">Add</button>
                     </td>
                 </tr>

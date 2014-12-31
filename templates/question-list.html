@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
     </head>
     <body>
-        <table border="1" style="width: 100%" class="table">
+        <table border="1" style="width: 100%" class="table table-striped table-condensed">
             <tr>
                 <th>ID</th>
                 <th>Rule</th>
@@ -24,7 +24,7 @@
                 </tr>
             {% endfor %}
             <tr>
-                <td colspan="6" style="color: #EE0000">
+                <td colspan="6">
                     <br>
                     Add a new question:
                 </td>
@@ -38,8 +38,8 @@
                             <option value="2">Trivia</option>
                         </select>
                     </td>
-                    <td><input type="text" name="question" style="width: 100%"></input></td>
-                    <td><input type="text" name="answer"></input></td>
+                    <td><input type="text" name="question" style="width: 100%" placeholder="Question"></input></td>
+                    <td><input type="text" name="answer" placeholder="Answer"></input></td>
                     <td>
                         <select name="ranking">
                             <option value="1">1</option>
@@ -47,7 +47,7 @@
                             <option value="3">3</option>
                         </select>
                     </td>
-                    <td><input type="text" name="question_type"></input>
+                    <td><input type="text" name="question_type" placeholder="Question Type"></input>
                         <button type="submit">Add</button>
                     </td>
                 </tr>
