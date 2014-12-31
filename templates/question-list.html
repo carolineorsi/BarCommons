@@ -1,9 +1,10 @@
 <html>
     <head>
         <title>BarCommons - Questions List</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
     </head>
     <body>
-        <table border="1" style="width: 100%">
+        <table border="1" style="width: 100%" class="table">
             <tr>
                 <th>ID</th>
                 <th>Rule</th>
@@ -22,6 +23,12 @@
                     <td>{{ question.question_type }}</td>
                 </tr>
             {% endfor %}
+            <tr>
+                <td colspan="6" style="color: #EE0000">
+                    <br>
+                    Add a new question:
+                </td>
+            </tr>
             <form method="POST" action="/add-question">
                 <tr>
                     <td>--</td>
@@ -31,7 +38,7 @@
                             <option value="2">Trivia</option>
                         </select>
                     </td>
-                    <td><input type="text" name="question"></input></td>
+                    <td><input type="text" name="question" style="width: 100%"></input></td>
                     <td><input type="text" name="answer"></input></td>
                     <td>
                         <select name="ranking">

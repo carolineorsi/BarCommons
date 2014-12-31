@@ -1,9 +1,10 @@
 <html>
     <head>
-        <title>BarCommons - Rules List</title>
+        <title>BarCommons - Rule List</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
     </head>
     <body>
-        <table border="1" style="width: 100%">
+        <table border="1" style="width: 100%" class="table">
             <tr>
                 <th>ID</th>
                 <th>Title</th>
@@ -22,11 +23,17 @@
                     <td>{{ rule.knowledge_level }}</td>
                 </tr>
             {% endfor %}
+            <tr>
+                <td colspan="6" style="color: #EE0000">
+                    <br>
+                    Add a new rule:
+                </td>
+            </tr>
             <form method="POST" action="/add-rule">
                 <tr>
                     <td>--</td>
                     <td><input type="text" name="title"</input></td>
-                    <td><input type="text" name="description"></input></td>
+                    <td><input type="text" name="description" style="width: 100%"></input></td>
                     <td><input type="text" name="source"></input></td>
                     <td>
                         <select name="subject">
