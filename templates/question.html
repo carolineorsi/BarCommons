@@ -1,11 +1,30 @@
 <html>
     <head>
         <title>BarCommons - Question</title>
+        <style>
+            #answer {
+                display: None;
+            }
+
+        </style>
     </head>
     <body>
+        
+
         <h1>Here's Your Question:</h1>
         <p>Q: {{ question }}</p>
-        <p>A: {{ answer }}</p>
-        <a href="/question"><button>Get New Question</button></a>
+        <button onclick="showAnswer()" id="show-answer">Show Answer</button>
+        <div id="answer">A: {{ answer }}</div>
+        <p><a href="/question"><button>Get New Question</button></a></p>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>
+
+        function showAnswer() {
+            $("#answer").show();
+            $("#show-answer").hide();
+        }
+
+        </script>
     </body>
 </html>
